@@ -1,0 +1,28 @@
+nnoremap <C-c> <ESC>
+inoremap <C-c> <ESC>
+vnoremap <C-c> <ESC>
+cnoremap <C-c> <ESC>
+
+
+";とうつと:になる
+noremap ; :
+
+"移動
+let g:BASH_Ctrl_j = 'off'
+nnoremap <C-j> 10j
+nnoremap <C-k> 10k
+vnoremap <C-j> 10j
+vnoremap <C-k> 10k
+
+"行頭行末
+nnoremap 0 $
+vnoremap 0 $
+nnoremap 1 0
+vnoremap 1 0
+
+""自動改行を無効化
+""set formatoptions=q
+"
+""行末まで削除
+""cnoremap <C-d> <C-\>e getcmdpos() == 1 ? '' : getcmdline()[:getcmdpos()-2]<CR>
+
