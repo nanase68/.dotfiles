@@ -7,21 +7,10 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim
   call neobundle#begin(expand('~/.vim/bundle/'))
   NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
-endif
-
-" Installation check.
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-        \ string(neobundle#get_not_installed_bundle_names())
-  echomsg 'Please execute ":NeoBundleInstall" command.'
-  "finish
-endif
-"----- ~ init -----
 
 "----- plugins -----
 " originalrepos on github
-NeoBundle 'Shougo/neobundle.vim'
+"NeoBundle 'Shougo/neobundle.vim'
 "NeoBundle 'Shougo/vimproc'
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
@@ -57,8 +46,8 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
 "vim-lldb
-NeoBundle "gilligan/vim-lldb"
-NeoBundle "tpope/vim-pathogen"
+"NeoBundle "gilligan/vim-lldb"
+"NeoBundle "tpope/vim-pathogen"
 
 "ファイルタイプに合ったコメントアウトを入れる
 NeoBundle "tyru/caw.vim.git"
@@ -72,6 +61,18 @@ vmap co <Plug>(caw:i:toggle)
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'vim-scripts/twilight'
 "----- ~ plugins -----
+  call neobundle#end()
+endif
+
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  "finish
+endif
+"----- ~ init -----
+
 " write after neobundles
 filetype plugin indent on     " required!
 filetype indent on
