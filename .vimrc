@@ -187,11 +187,11 @@ set hlsearch
 " 編集に関する設定:
 "
 " タブの画面上での幅
-set tabstop=2
+set tabstop=4
 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set softtabstop=2
+set softtabstop=4
 " 自動インデントでずれる幅
-set shiftwidth=2
+set shiftwidth=4
 " タブをスペースに展開する/ しない (expandtab:展開する)
 set expandtab
 " 自動的にインデントする (noautoindent:インデントしない)
@@ -240,13 +240,13 @@ set number
 " ファイル操作に関する設定:
 "
 " バックアップファイルを作成しない (次行の先頭の " を削除すれば有効になる)
-"set nobackup
+set nobackup
 " スワップファイルを作成しない (次行の先頭の " を削除すれば有効になる)
-"set noswapfile
+set noswapfile
 "バックアップファイルを作るディレクトリ
-set backupdir=$HOME/.vimbackup
+"set backupdir=$HOME/.vimbackup
 "スワップファイル用のディレクトリ
-set directory=$HOME/.vimbackup
+"set directory=$HOME/.vimbackup
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer 
 " シンタックスハイライト
