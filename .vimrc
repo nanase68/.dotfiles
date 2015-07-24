@@ -26,6 +26,7 @@ NeoBundle 'scrooloose/syntastic'
 " NeoBundle 'mrtazz/simplenote.vim'
 " ディレクトリをツリー表示
 NeoBundle 'scrooloose/nerdtree'
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 " vimplenote
 " NeoBundle 'mattn/webapi-vim'
@@ -79,9 +80,9 @@ filetype indent on
 "===== ~ neobundle =====
 
 "===== tex suite =====
-imap <C-p> <Plug>IMAP_JumpForward 
-nmap <C-p> <Plug>IMAP_JumpForward 
-vmap <C-p> <Plug>IMAP_JumpForward 
+imap <C-p> <Plug>IMAP_JumpForward
+nmap <C-p> <Plug>IMAP_JumpForward
+vmap <C-p> <Plug>IMAP_JumpForward
 "===== ~ tex suite =====
 
 "===== neocomplcache =====
@@ -98,14 +99,14 @@ vmap <C-p> <Plug>IMAP_JumpForward
     " Set minimum syntax keyword length.
     let g:neocomplcache_min_syntax_length = 3
     let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-    
+
     " Define dictionary.
     let g:neocomplcache_dictionary_filetype_lists = {
         \ 'default' : '',
         \ 'vimshell' : $HOME.'/.vimshell_hist',
         \ 'scheme' : $HOME.'/.gosh_completions'
             \ }
-    
+
     " Define keyword.
     if !exists('g:neocomplcache_keyword_patterns')
         let g:neocomplcache_keyword_patterns = {}
@@ -129,7 +130,7 @@ vmap <C-p> <Plug>IMAP_JumpForward
 
     " SuperTab like snippets behavior.
     "imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-    
+
     " Recommended key-mappings.
     " <CR>: close popup and save indent.
     inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
@@ -140,7 +141,7 @@ vmap <C-p> <Plug>IMAP_JumpForward
     inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
     inoremap <expr><C-y>  neocomplcache#close_popup()
     inoremap <expr><C-e>  neocomplcache#cancel_popup()
-    
+
     " AutoComplPop like behavior.
     "let g:neocomplcache_enable_auto_select = 1
 " ===== ~ neocomplcache =====
@@ -170,6 +171,7 @@ nnoremap <Space>mg :<C-u>MemoGrep<CR>
 
 
 
+
 "===== general =====
 " File ---------------------------------
 set autoread                          " 更新時自動再読込み
@@ -183,7 +185,7 @@ syntax on                             " シンタックスカラーリングオ�
 "スワップファイル用のディレクトリ
 "set directory=$HOME/.vimbackup
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
-" set browsedir=buffer 
+" set browsedir=buffer
 
 "---------------------------------------------------------------------------
 " 検索の挙動に関する設定:
@@ -196,7 +198,7 @@ set smartcase
 set incsearch
 " 検索ハイライト
 set hlsearch
- 
+
 "---------------------------------------------------------------------------
 " 編集に関する設定:
 "
@@ -249,10 +251,11 @@ set number
 "set showmode
 "" タイトルを表示
 "set title
-" 
+"
 "---------------------------------------------------------------------------
 "===== ~ general =====
 
+nnoremap <silent> bu :<C-u>buffers<CR>
 
 "===== move shortcut =====
 "----- カーソル移動 -----
@@ -281,7 +284,7 @@ vnoremap 1 ^
 "----- タブ移動 -----
 " The prefix key.
 nnoremap    [Tag]   <Nop>
-nmap    t [Tag]
+nmap    <Space> [Tag]
 " Tab jump
 " t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
 for n in range(1, 9)
@@ -294,9 +297,15 @@ map <silent> [Tag]x :tabclose<CR>
 " tn 次のタブ
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]] :tabnext<CR>
+noremap <silent> <Nop>]] :tabnext<CR>
+noremap <silent> <Nop><Space>] :tabnext<CR>
+" map <silent> ] :tabnext<CR>
 " tp 前のタブ<D-ç><D-ç><D-≈><D-ç><D-ç>
 map <silent> [Tag]p :tabprevious<CR>
 map <silent> [Tag][ :tabprevious<CR>
+noremap <silent> <Nop>[[ :tabprevious<CR>
+noremap <silent> <Nop><Space>[ :tabprevious<CR>
+
 "----- ~ タブ移動 -----
 "===== ~ move shortcut =====
 "
@@ -321,7 +330,7 @@ noremap ; :
 set clipboard+=unnamed
 "Vi互換をオフ
 set nocompatible
-"texでの日本語入力不具合回避 
+"texでの日本語入力不具合回避
 set imdisable
 "ビープ音を消す
 set visualbell t_vb=
@@ -345,8 +354,8 @@ nnoremap <Space>h :<C-u>vert bel h<Space>
 
 ""===== 日本語入力補助 =====
 ""ステータスバーを常に表示
-"set laststatus=2 
-" 
+"set laststatus=2
+"
 "" 「日本語入力固定モード」切替キー
 "inoremap <silent> <c -j="-j"> <c -r="-r">=IMState('FixMode')<cr>
 "" PythonによるIBus制御指定
