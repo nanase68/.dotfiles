@@ -6,6 +6,9 @@ alias ch="open -a ~/Applications/Google\ Chrome.app"
 alias chrome="open -a ~/Applications/Google\ Chrome.app"
 #===== ~ alias =====
 
+
+alias peco=~/src/peco_linux_amd64/peco
+
 #===== misc =====
 #texのパス
 #export PATH=$PATH:~/bin:/usr/texbin
