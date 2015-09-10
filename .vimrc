@@ -50,6 +50,9 @@ NeoBundle 'tyru/open-browser.vim'
 "NeoBundle "gilligan/vim-lldb"
 "NeoBundle "tpope/vim-pathogen"
 
+" シンタックスハイライト
+NeoBundle 'evidens/vim-twig'
+
 "ファイルタイプに合ったコメントアウトを入れる
 NeoBundle "tyru/caw.vim.git"
 " \cで行の先頭にコメントをつけたり外したりできる
