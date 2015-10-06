@@ -7,7 +7,8 @@ alias chrome="open -a ~/Applications/Google\ Chrome.app"
 #===== ~ alias =====
 
 #===== peco =====
-alias peco='~/bin/peco'
+BIN_DIR=~/bin
+alias peco='$BIN_DIR/peco_linux_amd64/peco'
 
 # http://wayohoo.com/unix/zsh-oh-my-zsh-peco-of-installation-procedure.html
 function peco-select-history() {
