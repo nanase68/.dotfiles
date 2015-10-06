@@ -1,2 +1,24 @@
 # 水平分割したウィンドウの下画面サイズを % で指定（行数指定も可）
 set split-view-height = 80%
+
+# デフォルトの bind generic G !git gc を無効化する
+bind generic G none
+# gキーの動作をvimlikeに
+bind generic g move-first-line
+bind generic G move-last-line
+
+# 右手でいろいろできるように
+bind diff ; view-next
+bind diff l scroll-right
+bind diff h scroll-left
+
+# コミットログを入れる
+# set main-view = line-number:interval=10 id:width=6 date author commit-title:graph=yes,refs=yes
+# set main-view =  id:width=6 date author commit-title:graph=yes,refs=yes
+# 行番号をつける
+# set show-line-numbers = yes
+# set line-number-interval = 10
+
+# グラフの崩れを無くす
+set line-graphics = ascii
+

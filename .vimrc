@@ -82,6 +82,10 @@ filetype plugin indent on     " required!
 filetype indent on
 "===== ~ neobundle =====
 
+" ジャンプ
+nnoremap <C-3> :vsp<CR> :exe("tjump ".expand('<cword>'))<CR>
+nnoremap <C-4> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+
 "===== tex suite =====
 imap <C-p> <Plug>IMAP_JumpForward
 nmap <C-p> <Plug>IMAP_JumpForward
