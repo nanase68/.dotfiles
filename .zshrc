@@ -11,6 +11,9 @@ alias peco='~/bin/peco'
 alias hi='history | peco'
 #===== ~ peco =====
 
+# historyの共有
+setopt share_history
+
 #===== misc =====
 #texのパス
 #export PATH=$PATH:~/bin:/usr/texbin
