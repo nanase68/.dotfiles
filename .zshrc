@@ -8,11 +8,41 @@ alias chrome="open -a ~/Applications/Google\ Chrome.app"
 
 #===== peco =====
 alias peco='~/bin/peco'
-alias hi='history | peco'
+
+# http://wayohoo.com/unix/zsh-oh-my-zsh-peco-of-installation-procedure.html
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 #===== ~ peco =====
 
-# historyの共有
+#===== history =====
+# 履歴ファイルの保存先
+export HISTFILE=${HOME}/.zsh_history
+
+# メモリに保存される履歴の件数
+export HISTSIZE=1000
+
+# 履歴ファイルに保存される履歴の件数
+export SAVEHIST=10000000
+
+# 重複を記録しない
+setopt hist_ignore_dups
+
+# historyを共有する
 setopt share_history
+#===== ~history =====
 
 #===== misc =====
 #texのパス
