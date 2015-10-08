@@ -4,6 +4,7 @@ alias profile='vim ~/.bash_profile'
 alias remind='vim ~/remind.txt'
 alias ch="open -a ~/Applications/Google\ Chrome.app"
 alias chrome="open -a ~/Applications/Google\ Chrome.app"
+alias tigs='tig status'
 #===== ~ alias =====
 
 #===== peco =====
