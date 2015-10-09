@@ -30,6 +30,7 @@ bindkey '^r' peco-select-history
 #===== ~ peco =====
 
 #===== history =====
+# http://qiita.com/syui/items/c1a1567b2b76051f50c4
 # 履歴ファイルの保存先
 export HISTFILE=${HOME}/.zsh_history
 
@@ -44,6 +45,9 @@ setopt hist_ignore_dups
 
 # historyを共有する
 setopt share_history
+
+# 開始と終了を記録
+setopt EXTENDED_HISTORY
 #===== ~history =====
 
 #===== misc =====
