@@ -1,7 +1,7 @@
 [alias]
   cfg = config --global
   b = branch
-  co = checkout
+  c = checkout
   p = push
   f = fetch
   s = status

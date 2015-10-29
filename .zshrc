@@ -4,14 +4,28 @@ alias profile='vim ~/.bash_profile'
 alias remind='vim ~/remind.txt'
 alias ch="open -a ~/Applications/Google\ Chrome.app"
 alias chrome="open -a ~/Applications/Google\ Chrome.app"
-alias tigs='tig status'
 #===== ~ alias =====
 
 #===== git tig =====
+alias t='tig'
 alias ts='tig status'
 alias tigs='tig status'
-alias g=git
+alias g='git'
+alias gb='git branch'
+alias gbl='git blame'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gcm='git checkout master'
+alias gs='git status'
+alias gg='git grep'
+alias gri='git rebase -i'
 #===== ~ git tig =====
+
+#===== fast alias =====
+alias la='ls -la'
+alias ll='ls -la'
+alias sz='source ~/.zshrc'
+#===== ~ fast alias =====
 
 
 #===== peco =====
