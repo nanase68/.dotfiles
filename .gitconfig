@@ -1,0 +1,11 @@
+[alias]
+  cfg = config --global
+  b = branch
+  co = checkout
+  p = push
+  f = fetch
+  s = status
+  df = diff
+
+[color]
+  ui = auto

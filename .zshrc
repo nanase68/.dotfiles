@@ -7,11 +7,19 @@ alias chrome="open -a ~/Applications/Google\ Chrome.app"
 alias tigs='tig status'
 #===== ~ alias =====
 
+#===== git tig =====
+alias ts='tig status'
+alias tigs='tig status'
+alias g=git
+#===== ~ git tig =====
+
+
 #===== peco =====
 BIN_DIR=~/bin
 alias peco='$BIN_DIR/peco_linux_amd64/peco'
 
 # http://wayohoo.com/unix/zsh-oh-my-zsh-peco-of-installation-procedure.html
+# http://qiita.com/wada811/items/78b14181a4de0fd5b497
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
@@ -19,11 +27,9 @@ function peco-select-history() {
     else
         tac="tail -r"
     fi
-    BUFFER=$(\history -n 1 | \
-        eval $tac | \
-        peco --query "$LBUFFER")
+    BUFFER=$(\history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
-    zle clear-screen
+    # zle clear-screen
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
