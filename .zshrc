@@ -7,23 +7,28 @@ alias chrome="open -a ~/Applications/Google\ Chrome.app"
 #===== ~ alias =====
 
 #===== git tig =====
-alias t='tig'
-alias ts='tig status'
+alias    t='tig'
+alias   ts='tig status'
 alias tigs='tig status'
-alias g='git'
-alias gb='git branch'
-alias gbl='git blame'
-alias gc='git checkout'
-alias gcb='git checkout -b'
-alias gcm='git checkout master'
-alias gs='git status'
-alias gg='git grep'
-alias gri='git rebase -i'
+alias   gk='cat ~/.gitconfig'
+alias    g='git'
+alias   gb='git branch'
+alias   gc='git checkout'
+alias  gcb='git checkout -b'
+alias  gcm='git checkout master'
+alias  gms='git merge --squash'
+alias  gri='git rebase -i'
+alias   gp='git push'
+alias   gf='git fetch'
+alias   gs='git status'
+alias  gbl='git blame'
+alias   gg='git grep'
 #===== ~ git tig =====
 
 #===== fast alias =====
 alias la='ls -la'
 alias ll='ls -la'
+alias s='source ~/.zshrc'
 alias sz='source ~/.zshrc'
 #===== ~ fast alias =====
 

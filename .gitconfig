@@ -1,11 +1,15 @@
 [alias]
-  cfg = config --global
-  b = branch
-  c = checkout
-  p = push
-  f = fetch
-  s = status
-  df = diff
+  b   = branch
+  c   = checkout
+  cb  = checkout -b
+  cm  = checkout master
+  ms  = git merge --squash
+  ri  = git rebase -i
+  p   = pull
+  f   = fetch
+  s   = status
+  bl  = blame
+  g   = grep
 
 [color]
   ui = auto
