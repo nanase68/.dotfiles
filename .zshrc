@@ -7,6 +7,7 @@ alias chrome="open -a ~/Applications/Google\ Chrome.app"
 #===== ~ alias =====
 
 #===== git tig =====
+alias   gk='cat ~/.gitconfig'
 alias    t='tig'
 alias   ts='tig status'
 alias tigs='tig status'
