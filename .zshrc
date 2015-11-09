@@ -10,6 +10,7 @@ alias chrome="open -a ~/Applications/Google\ Chrome.app"
 alias    t='tig'
 alias   ts='tig status'
 alias tigs='tig status'
+alias  tbl='tig blame'
 alias   gk='cat ~/.gitconfig'
 alias    g='git'
 alias   gb='git branch'
@@ -21,7 +22,7 @@ alias  gri='git rebase -i'
 alias   gp='git pull'
 alias   gf='git fetch'
 alias   gs='git status'
-alias  gbl='git blame'
+alias  gbl='tig blame'
 alias   gg='git grep'
 #===== ~ git tig =====
 
