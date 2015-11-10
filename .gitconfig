@@ -1,5 +1,6 @@
 [alias]
   b   = branch
+  ba  = branch --all
   c   = checkout
   cb  = checkout -b
   cm  = checkout master
