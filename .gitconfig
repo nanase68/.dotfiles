@@ -4,6 +4,7 @@
   c   = checkout
   cb  = checkout -b
   cm  = checkout master
+ coa  = commit --ammend
   ms  = merge --squash
   ri  = rebase -i
   rp  = remote prune origin
