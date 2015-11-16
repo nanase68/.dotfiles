@@ -4,8 +4,9 @@
   c   = checkout
   cb  = checkout -b
   cm  = checkout master
-  ms  = git merge --squash
-  ri  = git rebase -i
+  ms  = merge --squash
+  ri  = rebase -i
+  rp  = remote prune origin
   p   = pull
   f   = fetch
   s   = status
