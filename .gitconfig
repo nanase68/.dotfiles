@@ -8,6 +8,8 @@
   ms  = merge --squash
   ri  = rebase -i
   rp  = remote prune origin
+  st  = stash
+  stp = stash pop
   p   = pull
   f   = fetch
   s   = status
