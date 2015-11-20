@@ -35,6 +35,7 @@ alias   gg='git grep'
 #===== fast alias =====
 alias la='ls -la'
 alias ltr='ls -ltr'
+alias ff='find . -name'
 alias s='source ~/.zshrc'
 alias sz='source ~/.zshrc'
 #===== ~ fast alias =====
