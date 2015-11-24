@@ -36,9 +36,11 @@ alias   gg='git grep -nI --color'
 #===== fast alias =====
 alias la='ls -la'
 alias ltr='ls -ltr'
-alias ff='find . -name'
 alias s='source ~/.zshrc'
 alias sz='source ~/.zshrc'
+function ff(){
+  find . -name "*${1}*"
+}
 #===== ~ fast alias =====
 
 
