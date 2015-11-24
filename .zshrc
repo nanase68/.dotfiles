@@ -1,9 +1,10 @@
-#===== alias =====
+#===== command modify =====
 alias vi=vim
-alias profile='vim ~/.bash_profile'
-alias remind='vim ~/remind.txt'
-alias ch="open -a ~/Applications/Google\ Chrome.app"
-alias chrome="open -a ~/Applications/Google\ Chrome.app"
+alias less='less -R'
+#grep:行番号表示、色付け
+alias grep="grep -n --color=auto "
+#grep:バイナリを弾く
+alias grepnb='grep -nr --color=auto -I -E "[0-9]{3}-[0-9]{4}-[0-9]{3}" '
 #===== ~ alias =====
 
 #===== git tig =====
@@ -29,7 +30,7 @@ alias   gp='git pull'
 alias   gf='git fetch'
 alias   gs='git status'
 alias  gbl='tig blame'
-alias   gg='git grep'
+alias   gg='git grep -nI --color'
 #===== ~ git tig =====
 
 #===== fast alias =====
@@ -98,15 +99,6 @@ function gray(){
 # rmをrmtrashに置き換える
 alias rm='rmtrash'
 #===== ~ rm =====
-
-#===== grep =====
-#grepが自動的に行番号表示と色付けを行うようにする
-alias grep="grep -n --color=auto "
-
-#grep バイナリを弾く
-alias grepnb='grep -nr --color=auto -I -E "[0-9]{3}-[0-9]{4}-[0-9]{3}" '
-#===== ~ grep =====
-#
 
 ## tmux自動起動
 # # http://d.hatena.ne.jp/tyru/20100828/run_tmux_or_screen_at_shell_startup

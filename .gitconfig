@@ -14,7 +14,7 @@
   f   = fetch
   s   = status
   bl  = blame
-  g   = grep
+  g   = grep -nI --color
 
 [color]
   ui = auto
