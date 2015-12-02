@@ -3,6 +3,9 @@ alias vi=vim
 alias less='less -R'
 #grep:行番号表示、色付け
 alias grep="grep -n --color=auto "
+function ggrep(){
+   \grep -nr --color=auto "${1}" *
+}
 #grep:バイナリを弾く
 alias grepnb='grep -nr --color=auto -I -E "[0-9]{3}-[0-9]{4}-[0-9]{3}" '
 #===== ~ alias =====
