@@ -37,6 +37,9 @@ alias   gg='git grep -nI --color'
 #===== ~ git tig =====
 
 #===== fast alias =====
+alias  c='cd'
+alias  d='cd'
+alias  l='ll'
 alias la='ls -la'
 alias ltr='ls -ltr'
 alias s='source ~/.zshrc'
