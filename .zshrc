@@ -2,7 +2,7 @@
 alias vi=vim
 alias less='less -R'
 #grep:行番号表示、色付け
-alias grep="grep -n --color=auto "
+alias grep="grep --color=auto "
 function ggrep(){
    \grep -nr --color=auto "${1}" *
 }
@@ -39,11 +39,12 @@ alias   gg='git grep -nI --color'
 #===== fast alias =====
 alias  c='cd'
 alias  d='cd'
+alias  p='pwd'
+alias  v='vim'
+alias  s='source ~/.zshrc'
 alias  l='ll'
 alias la='ls -la'
 alias ltr='ls -ltr'
-alias s='source ~/.zshrc'
-alias sz='source ~/.zshrc'
 function ff(){
   find . -name "*${1}*"
 }
