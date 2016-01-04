@@ -93,6 +93,13 @@ setopt share_history
 setopt EXTENDED_HISTORY
 #===== ~history =====
 
+
+#===== zsh設定 =====
+# 変数の結果を置換して得られた文字を、ファイル拡張やファイル名生成として扱う
+setopt GLOB_SUBST
+#===== ~zsh設定 =====
+
+
 #===== misc =====
 #texのパス
 #export PATH=$PATH:~/bin:/usr/texbin

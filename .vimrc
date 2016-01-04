@@ -62,11 +62,11 @@ nmap co <Plug>(caw:i:toggle)
 vmap co <Plug>(caw:i:toggle)
 
 " colorscheme
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'vim-scripts/twilight'
+NeoBundle 'ywjno/vim-tomorrow-theme'
 "----- ~ plugins -----
   call neobundle#end()
 endif
+colorscheme Tomorrow-Night
 
 " Installation check.
 if neobundle#exists_not_installed_bundles()
