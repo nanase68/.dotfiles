@@ -7,13 +7,13 @@
  coa  = commit --amend
   ms  = merge --squash
   ri  = rebase -i
-  rp  = remote prune origin
-  st  = stash
-  stp = stash pop
+ rp   = remote prune origin
+ st   = stash
+ stp  = stash pop
   p   = pull
   f   = fetch
   s   = status
-  bl  = blame
+ bl   = blame
   g   = grep -nI --color
 
 [color]
