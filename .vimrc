@@ -153,6 +153,9 @@ vmap <C-p> <Plug>IMAP_JumpForward
     "let g:neocomplcache_enable_auto_select = 1
 " ===== ~ neocomplcache =====
 
+
+
+
 " ===== memolist =====
 " memolist.vim settings
 let g:memolist_path = "~/Dropbox/vim/memolist"
@@ -347,6 +350,16 @@ nnoremap ZQ <Nop>
 "ヘルプを縦分割で表示する
 "http://webtech-walker.com/archive/2009/08/19092113.html
 nnoremap <Space>h :<C-u>vert bel h<Space>
+
+" set number
+function Setnumber()
+  if &number
+    setlocal nonumber
+  else
+    setlocal number
+  endif
+endfunction
+nnoremap num :call Setnumber()<CR>
 "===== ~ misc =====
 
 ""===== 日本語入力補助 =====
