@@ -1,85 +1,85 @@
 "===== neobundle =====
 "----- init -----
-" set nocompatible               " be iMproved
-" filetype off
-"
-" if has('vim_starting')
-"   set runtimepath+=~/.vim/bundle/neobundle.vim
-"   call neobundle#begin(expand('~/.vim/bundle/'))
-"   NeoBundleFetch 'Shougo/neobundle.vim'
-"
-" "----- plugins -----
-" " originalrepos on github
-" "NeoBundle 'Shougo/neobundle.vim'
-" "NeoBundle 'Shougo/vimproc'
-" NeoBundle 'VimClojure'
-" NeoBundle 'Shougo/vimshell'
-" NeoBundle 'Shougo/unite.vim'
-" NeoBundle 'Shougo/neocomplcache'
-" "NeoBundle 'Shougo/neocomplcache-snippets-complete'
-" NeoBundle 'Shougo/neosnippet'
-" NeoBundle 'Shougo/neosnippet-snippets'
-" "NeoBundle 'jpalardy/vim-slime'
-" NeoBundle 'scrooloose/syntastic'
-"
-" " simplenote
-" " NeoBundle 'mrtazz/simplenote.vim'
-" " ディレクトリをツリー表示
-" NeoBundle 'scrooloose/nerdtree'
-" nnoremap <silent><C-e> :NERDTreeToggle<CR>
-"
-" " vimplenote
-" " NeoBundle 'mattn/webapi-vim'
-" " NeoBundle 'mattn/vimplenote-vim'
-"
-" " メモ書き
-" NeoBundle 'glidenote/memolist.vim'
-" NeoBundle 'fuenor/qfixgrep.git'
-"
-" ""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
-"
-" "vim-latex
-" "NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
-"
-" " markdown
-" NeoBundle 'plasticboy/vim-markdown'
-" NeoBundle 'kannokanno/previm'
-" NeoBundle 'tyru/open-browser.vim'
-"
-" "vim-lldb
-" "NeoBundle "gilligan/vim-lldb"
-" "NeoBundle "tpope/vim-pathogen"
-"
-" " シンタックスハイライト
-" NeoBundle 'evidens/vim-twig'
-"
-" "ファイルタイプに合ったコメントアウトを入れる
-" NeoBundle "tyru/caw.vim.git"
-" " \cで行の先頭にコメントをつけたり外したりできる
-" "nmap <Leader>c <Plug>(caw:i:toggle)
-" "vmap <Leader>c <Plug>(caw:i:toggle)
-" nmap co <Plug>(caw:i:toggle)
-" vmap co <Plug>(caw:i:toggle)
-"
-" " colorscheme
-" NeoBundle 'ywjno/vim-tomorrow-theme'
+set nocompatible               " be iMproved
+filetype off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+
+"----- plugins -----
+" originalrepos on github
+"NeoBundle 'Shougo/neobundle.vim'
+"NeoBundle 'Shougo/vimproc'
+NeoBundle 'VimClojure'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/neocomplcache-snippets-complete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+"NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'scrooloose/syntastic'
+
+" simplenote
+" NeoBundle 'mrtazz/simplenote.vim'
+" ディレクトリをツリー表示
+NeoBundle 'scrooloose/nerdtree'
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+" vimplenote
+" NeoBundle 'mattn/webapi-vim'
+" NeoBundle 'mattn/vimplenote-vim'
+
+" メモ書き
+NeoBundle 'glidenote/memolist.vim'
+NeoBundle 'fuenor/qfixgrep.git'
+
+""NeoBundle 'https://bitbucket.org/kovisoft/slimv'
+
+"vim-latex
+"NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+
+" markdown
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+
+"vim-lldb
+"NeoBundle "gilligan/vim-lldb"
+"NeoBundle "tpope/vim-pathogen"
+
+" シンタックスハイライト
+NeoBundle 'evidens/vim-twig'
+
+"ファイルタイプに合ったコメントアウトを入れる
+NeoBundle "tyru/caw.vim.git"
+" \cで行の先頭にコメントをつけたり外したりできる
+"nmap <Leader>c <Plug>(caw:i:toggle)
+"vmap <Leader>c <Plug>(caw:i:toggle)
+nmap co <Plug>(caw:i:toggle)
+vmap co <Plug>(caw:i:toggle)
+
+" colorscheme
+NeoBundle 'ywjno/vim-tomorrow-theme'
 "----- ~ plugins -----
-"   call neobundle#end()
-" endif
-" "colorscheme Tomorrow-Night
-"
-" " Installation check.
-" if neobundle#exists_not_installed_bundles()
-"   echomsg 'Not installed bundles : ' .
-"         \ string(neobundle#get_not_installed_bundle_names())
-"   echomsg 'Please execute ":NeoBundleInstall" command.'
-"   "finish
-" endif
-" "----- ~ init -----
-"
-" " write after neobundles
-" filetype plugin indent on     " required!
-" filetype indent on
+  call neobundle#end()
+endif
+"colorscheme Tomorrow-Night
+
+" Installation check.
+if neobundle#exists_not_installed_bundles()
+  echomsg 'Not installed bundles : ' .
+        \ string(neobundle#get_not_installed_bundle_names())
+  echomsg 'Please execute ":NeoBundleInstall" command.'
+  "finish
+endif
+"----- ~ init -----
+
+" write after neobundles
+filetype plugin indent on     " required!
+filetype indent on
 "===== ~ neobundle =====
 
 " ジャンプ
