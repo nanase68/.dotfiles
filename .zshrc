@@ -82,6 +82,12 @@ PROMPT2='[%n]> '
 
 
 #===== peco =====
+hash peco 2>/dev/null;
+if [ "$?" -ne 0 ]; then
+  BIN_DIR=~/bin
+  alias peco='$BIN_DIR/peco_linux_amd64/peco'
+fi
+
 # http://k0kubun.hatenablog.com/entry/2014/07/06/033336
 function peco-select-history() {
     BUFFER=$(fc -l -r -n 1 | peco --query "$LBUFFER")

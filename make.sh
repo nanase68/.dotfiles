@@ -12,7 +12,7 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 
 
-if [ $1 -ne 'local' ]
+if [ $# -eq 0 ]; then
   # peco
   mkdir -p $BIN_DIR
   cd $BIN_DIR
