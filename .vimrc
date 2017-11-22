@@ -66,7 +66,7 @@ NeoBundle 'ywjno/vim-tomorrow-theme'
 "----- ~ plugins -----
   call neobundle#end()
 endif
-colorscheme Tomorrow-Night
+"colorscheme Tomorrow-Night
 
 " Installation check.
 if neobundle#exists_not_installed_bundles()
@@ -197,6 +197,8 @@ syntax on                             " シンタックスカラーリングオ�
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 " set browsedir=buffer
 
+nnoremap num :set nonumber
+
 "---------------------------------------------------------------------------
 " 検索の挙動に関する設定:
 "
@@ -213,11 +215,11 @@ set hlsearch
 " 編集に関する設定:
 "
 " タブの画面上での幅
-set tabstop=4
+set tabstop=2
 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set softtabstop=4
+set softtabstop=2
 " 自動インデントでずれる幅
-set shiftwidth=4
+set shiftwidth=2
 " タブをスペースに展開する/ しない (expandtab:展開する)
 set expandtab
 " 自動的にインデントする (noautoindent:インデントしない)

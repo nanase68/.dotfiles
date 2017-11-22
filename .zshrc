@@ -1,13 +1,20 @@
+# https://qiita.com/scalper/items/ed83c24f568cbf7f132b
+## zplug
+source ~/.zplug/init.zsh
+zplug 'zsh-users/zsh-completions'
+zplug 'zsh-users/zaw'
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+zplug check || zplug install
+
 #===== command modify =====
-alias vi=vim
 alias less='less -R'
 #grep:行番号表示、色付け
-alias grep="grep --color=auto "
+alias grep="grep -G "
 function ggrep(){
-   \grep -nr --color=auto "${1}" *
+   \grep -nr -G "${1}" *
 }
 #grep:バイナリを弾く
-alias grepnb='grep -nr --color=auto -I -E "[0-9]{3}-[0-9]{4}-[0-9]{3}" '
+alias grepnb='grep -nr -G -I -E "[0-9]{3}-[0-9]{4}-[0-9]{3}" '
 #===== ~ alias =====
 
 #===== git tig =====
@@ -19,7 +26,7 @@ alias  tbl='tig blame'
 alias   gk='cat ~/.gitconfig'
 alias    g='git'
 alias   gb='git branch'
-alias  gba='git branch -all'
+alias  gba='git branch --all'
 alias   gc='git checkout'
 alias  gcb='git checkout -b'
 alias  gcm='git checkout master'
@@ -30,6 +37,7 @@ alias  grp='git remote prune origin'
 alias  gst='git stash'
 alias gstp='git stash pop'
 alias   gp='git pull'
+alias gpod='git pull origin develop'
 alias   gf='git fetch'
 alias   gs='git status'
 alias  gbl='tig blame'
@@ -42,35 +50,68 @@ alias  d='cd'
 alias  p='pwd'
 alias  v='vim'
 alias  s='source ~/.zshrc'
-alias  l='ll'
-alias la='ls -la'
-alias ltr='ls -ltr'
+alias  l='ls -lah -G'
+alias la='ls -lah -G'
+alias ltr='ls -ltrh -G'
+alias be='bundle exec'
+alias ber='bundle exec ruby'
 function ff(){
   find . -name "*${1}*"
 }
 #===== ~ fast alias =====
 
+#===== basic =====
+#bindkey -v # viins キーマップを選択
+bindkey -e
+
+# http://kronus9.sblo.jp/article/70293394.html
+fpath=(/usr/local/share/zsh-completions $fpath)
+export LANG=ja_JP.UTF-8
+autoload -Uz compinit
+compinit
+#===== ~ basic =====
+
+#===== prompt =====
+autoload colors
+colors
+
+PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
+[%n]$ "
+PROMPT2='[%n]> '
+#===== ~ prompt =====
+
 
 #===== peco =====
-BIN_DIR=~/bin
-alias peco='$BIN_DIR/peco_linux_amd64/peco'
-
-# http://wayohoo.com/unix/zsh-oh-my-zsh-peco-of-installation-procedure.html
-# http://qiita.com/wada811/items/78b14181a4de0fd5b497
+# http://k0kubun.hatenablog.com/entry/2014/07/06/033336
 function peco-select-history() {
-    local tac
-    if which tac > /dev/null; then
-        tac="tac"
-    else
-        tac="tail -r"
-    fi
-    BUFFER=$(\history -n 1 | eval $tac | awk '!a[$0]++' | peco --query "$LBUFFER")
+    BUFFER=$(fc -l -r -n 1 | peco --query "$LBUFFER")
     CURSOR=$#BUFFER
-    # zle clear-screen
+    zle redisplay
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+alias -g B='`git branch | peco | sed -e "s/^\*[ ]*//g"`'
+
+function peco-find-file() {
+    if git rev-parse 2> /dev/null; then
+        source_files=$(git ls-files)
+    else
+        source_files=$(find . -type f)
+    fi
+    selected_files=$(echo $source_files | peco --prompt "[find file]")
+
+    BUFFER="${BUFFER}${echo $selected_files | tr '\n' ' '}"
+    CURSOR=$#BUFFER
+    zle redisplay
+}
+zle -N peco-find-file
+bindkey '^q' peco-find-file
 #===== ~ peco =====
+
+#===== ical =====
+alias  ical='osascript -l JavaScript ~/bin/scripts/ical.scpt'
+#===== ~ ical =====
 
 #===== history =====
 # http://qiita.com/syui/items/c1a1567b2b76051f50c4
@@ -103,18 +144,21 @@ setopt GLOB_SUBST
 #===== misc =====
 #texのパス
 #export PATH=$PATH:~/bin:/usr/texbin
-export PATH=$PATH:/Applications/UpTeX.app/teTeX/bin
+# export PATH=$PATH:/Applications/UpTeX.app/teTeX/bin
 
 # 画像をグレイスケール化
-function gray(){
-	convert $1 \( +clone -alpha opaque -fill white -colorize 100% \) +swap -geometry +0+0 -compose Over -composite -alpha off -type GrayScale $1
-}
+# function gray(){
+# 	convert $1 \( +clone -alpha opaque -fill white -colorize 100% \) +swap -geometry +0+0 -compose Over -composite -alpha off -type GrayScale $1
+# }
 #===== ~ misc =====
 
-#===== rm =====
-# rmをrmtrashに置き換える
-alias rm='rmtrash'
-#===== ~ rm =====
+#===== pyenv =====
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+#===== ~ pyenv =====
+
+# rbenvのリハッシュ
+eval "$(rbenv init -)"
 
 ## tmux自動起動
 # # http://d.hatena.ne.jp/tyru/20100828/run_tmux_or_screen_at_shell_startup
@@ -151,3 +195,10 @@ alias rm='rmtrash'
 # fi
 # done
 # fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
