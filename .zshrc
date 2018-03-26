@@ -115,10 +115,6 @@ zle -N peco-find-file
 bindkey '^q' peco-find-file
 #===== ~ peco =====
 
-#===== ical =====
-alias  ical='osascript -l JavaScript ~/bin/scripts/ical.scpt'
-#===== ~ ical =====
-
 #===== history =====
 # http://qiita.com/syui/items/c1a1567b2b76051f50c4
 # 履歴ファイルの保存先
@@ -145,26 +141,6 @@ setopt EXTENDED_HISTORY
 # 変数の結果を置換して得られた文字を、ファイル拡張やファイル名生成として扱う
 setopt GLOB_SUBST
 #===== ~zsh設定 =====
-
-
-#===== misc =====
-#texのパス
-#export PATH=$PATH:~/bin:/usr/texbin
-# export PATH=$PATH:/Applications/UpTeX.app/teTeX/bin
-
-# 画像をグレイスケール化
-# function gray(){
-# 	convert $1 \( +clone -alpha opaque -fill white -colorize 100% \) +swap -geometry +0+0 -compose Over -composite -alpha off -type GrayScale $1
-# }
-#===== ~ misc =====
-
-#===== pyenv =====
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-#===== ~ pyenv =====
-
-# rbenvのリハッシュ
-eval "$(rbenv init -)"
 
 ## tmux自動起動
 # # http://d.hatena.ne.jp/tyru/20100828/run_tmux_or_screen_at_shell_startup
@@ -202,9 +178,3 @@ eval "$(rbenv init -)"
 # done
 # fi
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
